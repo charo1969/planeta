@@ -1,4 +1,6 @@
-
+/**
+ * Ejercicio sobre los planetas.
+ */
 package modelo;
 
 public class Planeta {
@@ -11,18 +13,19 @@ public class Planeta {
 	private int distancia;
 	private String tipoPlaneta;
 	private boolean observableASV;
-	
-	public static final double UA = 199597870/1000000.0; //constante
+
+	public static final double UA = 149597870; // constante
 
 	// constructor sin parámetros
 	public Planeta() {
-		super();
-		this.nombre = "";
+
+		this.nombre = null;
 		this.satelite = 0;
 		this.masa = 0;
 		this.volumen = 0;
 		this.diametro = 0;
 		this.distancia = 0;
+		this.tipoPlaneta = "Terrestre";
 		compruebaTipo();
 		this.observableASV = false;
 
@@ -40,6 +43,17 @@ public class Planeta {
 			this.tipoPlaneta = "Terrestre";
 
 		}
+		// OTRA FORMA
+
+		/*
+		 * public String compruebaTipo(String tipoPlaneta){
+		 * 
+		 * if(tipoPlaneta.equalsIgnoreCase("GASEOSO") ||
+		 * (tipoPlaneta.equalsIgnoreCase("ENANO")){ return tipoPlaneta.toUpperCase(); }
+		 * return "TERRESTRE"; }
+		 * 
+		 * 
+		 */
 
 	}
 
@@ -143,7 +157,7 @@ public class Planeta {
 		this.observableASV = observableASV;
 	}
 
-	// método calculaDensidad.
+	// método calculaDensidad. Es masa/volumen,
 
 	public double calculaDensidad() {
 
@@ -153,20 +167,17 @@ public class Planeta {
 	// método siEsPlanetaExterior
 
 	public boolean esPlanetaExterior() {
-		
-		double resUA = this.distancia / UA;
+
+		double resUA = this.distancia / (UA / 1000000.0);
 
 		if (resUA > 3.4) {
-			
-			System.out.println("El planeta esta en el Exterior del sistema solar ");
+
 			return true;
-		}else {
-			System.out.println("El planeta esta dentro del sistema solar");
+		} else {
+
 			return false;
 		}
-		
-		
-		
+
 	}
 
 }

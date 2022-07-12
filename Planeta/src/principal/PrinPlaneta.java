@@ -6,34 +6,30 @@ public class PrinPlaneta {
 
 	public static void main(String[] args) {
 		
-		Planeta p1 = new Planeta("Saturno1",2,10000,2000,50000,40000,"enano",true);
-		Planeta p2 = new Planeta("Saturno2",4,20,20,50,40,"Gaseoso",false);
+		Planeta p1 = new Planeta("Saturno",200,5.688E26,8.27E23,120536,1418,"GASEOSO",true);
+		Planeta p2 = new Planeta("Marte",2,6.41E23,1.63E11,6742,228,"TERRESTRE",true);
 		
 		
 		/**
 		 * Todos los datos de los planetas
 		 * 
 		 */
-		System.out.println("los datos de Saturno1 son "+p1);
-		System.out.println("los datos de Saturno2 son "+p2);
+		System.out.println("los datos de Saturno son "+p1);
+		System.out.println("los datos de Marte son "+p2);
 		
 		/**
 		 * Densidad de los planetas 
 		 */
-		System.out.println("La densidad de Saturno1 es "+p1.calculaDensidad());
-		System.out.println("La densidad de Saturno2 es "+p2.calculaDensidad());
-		
-		p1.setMasa(4500);
-		p1.setVolumen(456456);
-		System.out.println("La densidad de Saturno1 es "+p1.calculaDensidad());
-		
-		
+		System.out.println("La densidad de Saturno es "+p1.calculaDensidad());
+		System.out.println("La densidad de Marte es "+p2.calculaDensidad());
+
+
 		/**
 		 * Planeta es exterior o no
 		 */
 		
-		System.out.println(p1.esPlanetaExterior());
-		System.out.println(p2.esPlanetaExterior());
+		System.out.println("Saturno es exterior? "+p1.esPlanetaExterior());
+		System.out.println("Marte es exterior? "+p2.esPlanetaExterior());
 		
 
 	}
